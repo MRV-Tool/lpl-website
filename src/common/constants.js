@@ -68,18 +68,18 @@ export const ProcessList = [
     id:2,
     title:"Design",
     text:"Based on the research and analysis we create designs and prototype for the product and it is tested and refined until it meets the expectations.",
-    image:"/images/Search.svg",
+    image:"/images/Design.svg",
   },
   {
     id:3,
     title:"Development",
     text:"During this phase, the software architecture is built where ideas and designs transform into a working software product.",
-    image:"/images/Search.svg",
+    image:"/images/Development.svg",
   },
   {
     id:4,
     title:"Deployment",
     text:"After successful testing, the software is deployed in the target environment, making it available to end-users.",
-    image:"/images/Search.svg",
+    image:"/images/Deployment.svg",
   }
 ]
