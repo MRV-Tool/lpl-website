@@ -22,10 +22,10 @@ const Header = () => {
           className="z-[-1] absolute  top-[100px] right-0 max_md:hidden"
           src={Rectangle2}
         />
-        <div className="MainHeadingText w-[48rem] max_md:w-[22.25rem] max_md:line-height-[38px] line-height-[85px] -mt-32 max_md:mt-0">
+        <div className="MainHeadingText w-[60%] max_md:w-[65%] max_720:w-[95%] max_md:line-height-[38px] line-height-[85px] -mt-32 max_md:mt-0">
           Empowering Your Business Through Innovative Solutions
         </div>
-        <div className="SubHeadingText w-[694px] max_md:w-[22.25rem] line-height-[30px] mt-5">
+        <div className="SubHeadingText w-[45%] max_md:w-[53%] max_720:w-[90%] line-height-[30px] mt-5">
           We specialize in building scalable custom software solutions to
           optimize your processes and streamline workflows
         </div>

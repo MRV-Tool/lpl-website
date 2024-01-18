@@ -13,7 +13,7 @@ const Services = () => {
           We build solutions
         </div>
         <div className="F-JC-AI-CENTER">
-          <div className="SubHeadingText my-5 w-[756px] max_md:w-[351px]">
+          <div className="SubHeadingText my-5 w-[40%] max_md:w-[50%] max_720:w-[85%]">
             We work with you to understand your business needs and help you
             reach your goals by building solutions
           </div>

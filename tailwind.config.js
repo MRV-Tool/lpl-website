@@ -59,7 +59,7 @@ export default withMT({
         "dark-purplish": "#0C0031",
         purplish: "#190061",
         "dark-bluish": "#240090",
-        "classic-dark-bluish": "#3500D3",
+        "classic-dark-bluish": "#3500D4",
         "website-black": "#282828",
         "horizontal-seprator": "#E9E1FF",
         "golden-yellow": "#FFC100",
