@@ -91,6 +91,23 @@ body{
   bottom:20px;
   width:474px;
 }
+.inverted{
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #3500D4; 
+}
+.ellipse{
+  background:#230090;
+  filter:blur(300px);
+  z-index:-3;
+}
+.ellipse-2{
+  background:#230090;
+  filter:blur(230px);
+  z-index:-3;
+}
 @media (max-width: 980px) {
   .shadow-left,.shadow-right {
     border-radius: 50% 50% 0 0;

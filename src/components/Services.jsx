@@ -1,3 +1,4 @@
+import card from "@material-tailwind/react/theme/components/card";
 import React from "react";
 import { CardList } from "../common/constants";
 
@@ -32,7 +33,7 @@ const Services = () => {
                       <img
                         className="box-shadow"
                         src={cards.image}
-                        alt="Product Development"
+                        alt={cards.alt}
                       />
                     </div>
                     <div className="details lg:justify-self-end text-left max_md:text-center w-[35rem] max_xl:w-[25rem] max_md:w-[20rem] max_md:mt-5 max_md:justify-self-center">
@@ -52,7 +53,7 @@ const Services = () => {
                       <img
                         className="box-shadow"
                         src={cards.image}
-                        alt="Product Development"
+                        alt={cards.alt}
                       />
                     </div>
                     <div className="line lower left absolute max_xl:hidden"></div>

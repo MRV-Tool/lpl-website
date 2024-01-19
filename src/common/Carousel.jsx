@@ -39,7 +39,7 @@ const Carousel = ({ slides }) => {
               <div className="top-10 left-64 absolute w-[3.75rem] h-[3.75rem] rounded-full grad-cirlce-1 bg-[#E7DFFE] max_md:top-3 max_md:left-28"></div>
               <img
                 src={s.image}
-                alt={`Slide ${index}`}
+                alt={s.alt}
               />
               <div className="absolute w-[3.75rem] bottom-14 -left-10  h-[3.75rem] rounded-tl-full grad-cirlce-1 bg-[#BAACE4] max_md:bottom-7 max_md:-left-4"></div>
             </div>
