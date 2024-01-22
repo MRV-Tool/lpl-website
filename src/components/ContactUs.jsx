@@ -32,11 +32,11 @@ const ContactUs = () => {
   };
 
   return (
-    <div id="contact-us" className="my-24 relative">
-      {/* <img
+    <div id="contact-us" className="my-24 relative overflow-clip">
+      <img
           className="z-[-1] absolute w-full"
           src={BackgroundSVG}
-        /> */}
+        />
       <div className="w-full F-JC-AI-CENTER flex-col">
         <div className="HeadingText uppercase">ContactUs</div>
         <div className="underline max_md:w-[1.5rem]"></div>

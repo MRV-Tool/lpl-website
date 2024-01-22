@@ -108,6 +108,11 @@ body{
   filter:blur(230px);
   z-index:-3;
 }
+
+#process{
+  transition-timing-function: ease-in-out;
+}
+
 @media (max-width: 980px) {
   .shadow-left,.shadow-right {
     border-radius: 50% 50% 0 0;
@@ -133,9 +138,14 @@ body{
   .HeadingText {
     @apply text-LaptopHeading font-weight-900 text-classic-dark-bluish max_md:text-Heading;
   }
-
+  .ProcessHeading{
+    @apply text-LaptopHeading font-weight-900  max_md:text-Heading text-lavendar;
+  }
   .SubHeadingText {
     @apply text-LaptopSubHeading font-medium text-arrow-blue max_md:text-SubHeading; 
+  }
+  .ProcessSubHeading{
+    @apply text-LaptopSubHeading font-medium text-lavendar max_md:text-SubHeading ;
   }
 
   .GradientButton {

@@ -41,7 +41,7 @@ const Carousel = ({ slides }) => {
                 src={s.image}
                 alt={s.alt}
               />
-              <div className="absolute w-[3.75rem] bottom-14 -left-10  h-[3.75rem] rounded-tl-full grad-cirlce-1 bg-[#BAACE4] max_md:bottom-7 max_md:-left-4"></div>
+              <div className="absolute w-[3.75rem] bottom-14 -left-10  h-[3.75rem] rounded-tl-full grad-cirlce-1 bg-lavendar max_md:bottom-7 max_md:-left-4"></div>
             </div>
             <div className="content flex flex-col w-[39rem] max_md:text-center  max_xl:w-[32rem] max_md:w-full max_md:px-10">
               <div className="HeadingText text-arrow-blue ">{s.name}</div>
