@@ -36,6 +36,42 @@ body{
   border-radius: 50% 50% 3.5rem 0px;
 }
 
+@keyframes colorSwap {
+  from {
+    color: #BAACE4;
+  }
+  to {
+    color: #3500D4;
+  }
+}
+
+@keyframes reverseColorSwap {
+  from {
+    color: #3500D4;
+  }
+  to {
+    color: #BAACE4;
+  }
+}
+
+@keyframes borderChange {
+  from {
+    border:#BAACE4 2px solid;
+  }
+  to {
+    border:#3500D4 2px solid;
+  }
+}
+
+@keyframes reverseBorderChange {
+  from {
+    border:#3500D4 2px solid;
+  }
+  to {
+    border:#BAACE4 2px solid;
+  }
+}
+
 @keyframes fadeInOut {
   from {
     opacity: 0;

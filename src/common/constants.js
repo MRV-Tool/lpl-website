@@ -72,7 +72,11 @@ export const ProcessList = [
     text:"The process begins with understanding and defining the needs and objectives of the software resulting in a requirements specification document.",
     active:"/images/Search.svg",
     inactive:'/images/SearchOff.svg',
-    alt:'research-icon'
+    alt:'research-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:2,
@@ -80,7 +84,11 @@ export const ProcessList = [
     text:"Based on the research and analysis we create designs and prototype for the product and it is tested and refined until it meets the expectations.",
     active:"/images/Design.svg",
     inactive:"/images/DesignOff.svg",
-    alt:'design-icon'
+    alt:'design-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:3,
@@ -88,7 +96,11 @@ export const ProcessList = [
     text:"During this phase, the software architecture is built where ideas and designs transform into a working software product.",
     active:"/images/Development.svg",
     inactive:"/images/DevelopmentOff.svg",
-    alt:'development-icon'
+    alt:'development-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:4,
@@ -96,6 +108,10 @@ export const ProcessList = [
     text:"After successful testing, the software is deployed in the target environment, making it available to end-users.",
     active:"/images/Deployment.svg",
     inactive:"/images/DeploymentOff.svg",
-    alt:"deployment-icon"
+    alt:"deployment-icon",
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   }
 ]

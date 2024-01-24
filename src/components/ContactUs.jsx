@@ -3,7 +3,7 @@ import BackgroundSVG from "../assets/images/FooterBG.svg";
 import PhoneInput, { formatPhoneNumberIntl } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-const ContactUs = () => {
+const ContactUs = React.forwardRef((props,ref) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(0);
@@ -32,7 +32,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div id="contact-us" className="my-24 relative overflow-clip">
+    <div ref={ref} id="contact-us" className="my-24 relative overflow-clip">
       <img
           className="z-[-1] absolute w-full"
           src={BackgroundSVG}
@@ -131,6 +131,6 @@ const ContactUs = () => {
       </div>
     </div>
   );
-};
+});
 
 export default ContactUs;
