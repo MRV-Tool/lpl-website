@@ -130,6 +130,7 @@ body{
 .inverted{
     width: 0;
     height: 0;
+    margin-left: 2px;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 12px solid #3500D4; 
@@ -158,7 +159,21 @@ body{
   .box-shadow{
     box-shadow: none;
   }
+  .inverted{
+    margin-left: 4px;
+  }
+  
 }
+@media(max-width:720px) {
+    .inverted{
+      margin-left: 2px
+    }
+  }
+@media(max-width:450px) {
+    .inverted{
+      margin-left: -1px
+    }
+  }
 @layer components {
   .F-JC-AI-CENTER {
     @apply flex items-center justify-center;

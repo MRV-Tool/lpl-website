@@ -11,6 +11,7 @@ const ProcessGrid = ({
   iconStyle,
   iconView,
   handleUpdate,
+  processPercent,
 }) => {
   const [style, setStyle] = useState({});
   const processRef = useRef();
@@ -20,16 +21,16 @@ const ProcessGrid = ({
     threshold: 1,
   });
 
-  useEffect(() => {
-    if (iconView) {
-      setStyle({ animation: "colorSwap 0.5s ease-in-out", color: "#3500D4" });
-    } else {
-      setStyle({
-        animation: "reverseColorSwap 0.5s ease-in-out",
-        color: "#BAACE4",
-      });
-    }
-  }, [iconView]);
+ useEffect(() => {
+   if (iconView) {
+     setStyle({ animation: 'colorSwap 0.5s ease-in-out', color: '#3500D4' });
+   } else {
+     setStyle({
+       animation: 'reverseColorSwap 0.5s ease-in-out',
+       color: '#BAACE4',
+     });
+   }
+ }, [iconView]);
 
   useEffect(() => {
     // console.log('inView,altText =====',inView,altText)
@@ -39,15 +40,15 @@ const ProcessGrid = ({
   }, [inView]);
 
   return (
-    <div className="py-6">
-      <div className="my-4">
+    <div className="py-2">
+      <div className="my-4 max_sm:my-2">
         <div
           ref={(node) => {
             iconRef.current = node;
             ref(node);
             // ref3(node)
           }}
-          className="grid grid-cols-3 grid-rows-2 w-full items-end max_md:grid-cols-2"
+          className="grid grid-cols-3 grid-rows-2 max_720:grid-rows-1 w-full max_md:grid-cols-2"
         >
           {index % 2 === 0 ? (
             <>
