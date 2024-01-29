@@ -1,18 +1,16 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { ProcessList } from '../common/constants';
-import ProcessGrid from '../common/ProcessGrid';
-// import { useInView } from 'react-intersection-observer';
-
+import React, { useEffect, useState, useRef } from "react";
+import { ProcessList } from "../common/constants";
+import ProcessGrid from "../common/ProcessGrid";
+import ProcessSwiper from "../common/ProcessSwiper";
 const Process = React.forwardRef((props) => {
   const { serviceView, reviewView } = props;
-  const processCard = useRef();
   const [processState, setProcessState] = useState(ProcessList);
   const [scrollPercentage, setScrollPercentage] = useState(0);
-  // const [ref1, inView] = useInView({
-  //   threshold: 1,
-  // });
   const [processIsInView, setProcessIsInView] = useState(false);
   const processRef = useRef();
+  const [updatedIndex, setUpdatedIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const useFeatureObserver = (ref) => {
     const callback = (entries, observer) => {
       entries.forEach((entry) => {
@@ -43,142 +41,104 @@ const Process = React.forwardRef((props) => {
 
   useFeatureObserver(processRef);
 
-  const handleStyle = (id, data) => {
-    let update = data.map((value, index) => {
-      console.log('value, index', value, index);
-      if (id == index) {
-        console.log("111111111111");
+  useEffect(() => {
+    const updateProcessList = () => {
+      let update = processState.map((process, index) => {
+        if (index === updatedIndex) {
+          return {
+            ...process,
+            view: true,
+            style: { border: "none", boxShadow: "0px 0px 20px 0px #0000000D" },
+          };
+        } else if (index < updatedIndex) {
+          return {
+            ...process,
+            view: true,
+            style: { border: "#3500D4 2px solid" },
+          };
+        } else {
+          return {
+            ...process,
+            view: false,
+            style: { border: "#BAACE4 2px solid" },
+          };
+        }
+      });
+      setProcessState(update);
+    };
+    if (updatedIndex != -1 && updatedIndex!=4) {
+      updateProcessList();
+    } else if(updatedIndex==4){
+      let updated = processState.map((process) => {
         return {
-          ...value,
-          style: { border: 'none', boxShadow: '0px 0px 20px 0px #0000000D' },
+          ...process,
+          view: true,
+          style: { border: "#3500D4 2px solid" },
         };
-      } else if (id > index) {
-        console.log('222222222222');
-        return { ...value, view: true, style: { border: '#3500D4 2px solid' } };
-      }
-      else {
-        console.log('333333333333');
+      });
+      setProcessState(updated);
+    }
+    else{
+      let updated = processState.map((process) => {
         return {
-          ...value,
+          ...process,
           view: false,
-          style: { border: '#BAACE4 2px solid' },
+          style: { border: "#BAACE4 2px solid" },
         };
-      }
-    });
-    // console.log('id,data =====',id,data)
-    setProcessState(update);
-  };
-
-  // const updateProcessList = (view, altText) => {
-  //   let id;
-  //   let update = processState.map((data, index) => {
-  //     if (data.alt === altText) {
-  //       if (altText === 'research-icon' && scrollPercentage > 10) {
-  //         id = index;
-  //         return { ...data, view: view };
-  //       }
-  //       if (altText === 'design-icon' && scrollPercentage > 30.5) {
-  //         id = index;
-  //         return { ...data, view: view };
-  //       } else if (altText === 'development-icon' && scrollPercentage > 50) {
-  //         id = index;
-  //         return { ...data, view: view };
-  //       } else if (altText === 'deployment-icon' && scrollPercentage > 70) {
-  //         id = index;
-  //         return { ...data, view: view };
-  //       } else {
-  //         return { ...data };
-  //       }
-  //     } else {
-  //       return { ...data };
-  //     }
-  //   });
-  //   handleStyle(id, update);
-  // };
-
-
-   const updateProcessList = (view, altText) => {
-     let id;
-     let update = processState.map((data, index) => {
-       if (data.alt === altText) {
-         id = index;
-         return { ...data, view: view };
-       } else {
-         return { ...data };
-       }
-     });
-     handleStyle(id, update);
-   };
+      });
+      setProcessState(updated);
+    }
+  }, [updatedIndex]);
 
   const handleScroll = () => {
-    const scrollContainer = document.getElementById('scrollContainer');
     const scrollY = window.scrollY - 1900;
     const windowHeight = 1000;
     const scrollHeight = 3000;
     const percentage = (scrollY / (scrollHeight - windowHeight)) * 100;
+
+    if(percentage>0 && percentage<12.5) setUpdatedIndex(-1)
+    else if (percentage >= 12.5 && percentage < 34.6) setUpdatedIndex(0);
+    else if (percentage >= 34.6 && percentage < 56.55) setUpdatedIndex(1);
+    else if (percentage >= 56.55 && percentage < 75.95) setUpdatedIndex(2);
+    else if (percentage >= 75.95 && percentage < 99.5) setUpdatedIndex(3);
+    else setUpdatedIndex(4)
+    
     if (percentage < 100) setScrollPercentage(percentage);
   };
 
   useEffect(() => {
     if (processIsInView) {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
     }
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [processIsInView]);
-
-  useEffect(() => {
-    if (reviewView) {
-      let updated = processState.map((process) => {
-        return {
-          ...process,
-          view: true,
-          style: { border: '#3500D4 2px solid' },
-        };
-      });
-      setProcessState(updated);
-    }
-    if (serviceView) {
-      let updated = processState.map((process) => {
-        return {
-          ...process,
-          view: false,
-          style: { border: '#BAACE4 2px solid' },
-        };
-      });
-      setProcessState(updated);
-    }
-  }, [serviceView, reviewView]);
 
   return (
     <div id="process" className="my-28">
       <div className="w-full F-JC-AI-CENTER flex-col">
         <div className="HeadingText uppercase">Process</div>
         <div className="underline max_md:w-[1.5rem]"></div>
-        <div className="my-8">
+        {/* desktop view */}
+        <div className="my-9 max_sm:hidden">
           <div
-            // ref={(node) => {
-            //   processCard.current = node;
-            //   ref1(node);
-            // }}
             id="scrollContainer"
             className="mx-auto w-[80%] relative py-8 max_md:w-full"
           >
             <div className="w-[500px] h-[500px] ellipse absolute top-0 -right-[500px] opacity-70"></div>
-            <div
-              className="full F-JC-AI-CENTER -mb-2 max_md:block max_md:ml-[24%]"
-              ref={processRef}
-            >
-              <div className="inverted"></div>
+            <div className="full F-JC-AI-CENTER" ref={processRef}>
+              <div className="inverted max_md:mr-0.5 max_720:mr-0"></div>
             </div>
             <div
-              className="absolute vertical-line border border-classic-dark-bluish left-[50%] z-[-1] max_md:left-[25%]"
+              className="absolute vertical-line border border-classic-dark-bluish left-[50%] z-[-1] "
               style={{ height: `${scrollPercentage}%` }}
             ></div>
-            <div className="pt-28 max_sm:pt-20">
+            <div className="absolute vertical-line border border-lavendar left-[50%] z-[-2] h-full "></div>
+            <div className="pt-28">
               {processState.map((process, index) => (
                 <ProcessGrid
+                  key={process.id}
                   active={process.active}
                   inactive={process.inactive}
                   heading={process.title}
@@ -186,17 +146,43 @@ const Process = React.forwardRef((props) => {
                   index={process.id}
                   altText={process.alt}
                   iconView={process.view}
-                  handleUpdate={updateProcessList}
                   iconStyle={process.style}
                   processPercent={scrollPercentage}
                 />
               ))}
             </div>
+
             <div className="w-[230px] h-[230px] ellipse-2 absolute bottom-96 -left-0"></div>
           </div>
         </div>
-        <div className="w-[80%] mx-auto F-JC-AI-CENTER max_md:block max_md:ml-[24%]">
+        <div className="w-[80%] mx-auto F-JC-AI-CENTER max_sm:hidden">
           <div className="bg-classic-dark-bluish w-[10px] h-[10px] rounded-full"></div>
+        </div>
+
+        {/* mobile view */}
+
+        <div className="relative hidden max_sm:block mt-8 w-full px-2 pb-8">
+        <div
+          style={{ filter: "blur(200px)" }}
+          className="hidden max_sm:block w-[250px] h-[250px] -right-56 bg-button-blue  opacity-50 absolute rounded-full"
+        ></div>
+        <div
+          style={{ filter: "blur(100px)" }}
+          className="hidden max_sm:block w-[93px] h-[93px] bottom-10 -left-10 bg-button-blue absolute  opacity-70 rounded-full"
+        ></div>
+          <div className=" absolute left-[17.5%] inverted"></div>
+          <div className="absolute w-[1px] bg-classic-dark-bluish left-[19%] z-[-1] h-full"></div>
+          <div
+            className="absolute bg-white F-JC-AI-CENTER w-[58px] h-[58px] justify-self-center left-[11%] top-[30%]"
+            style={{ boxShadow: "0px 0px 20px 0px #0000000D" }}
+          >
+            <img src={ProcessList[activeIndex].active} className="w-[40%]" />
+          </div>
+          <ProcessSwiper
+            processList={ProcessList}
+            setActiveIndex={setActiveIndex}
+          />
+          <div className="w-[8px] h-[8px] bg-classic-dark-bluish rounded-full absolute bottom-0 left-[17.8%] "></div>
         </div>
       </div>
     </div>

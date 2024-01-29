@@ -32,15 +32,14 @@ const ProcessGrid = ({
    }
  }, [iconView]);
 
-  useEffect(() => {
-    // console.log('inView,altText =====',inView,altText)
-    if (inView) {
-      handleUpdate(inView, altText);
-    }
-  }, [inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     handleUpdate(inView, altText);
+  //   }
+  // }, [inView]);
 
   return (
-    <div className="py-2">
+    <div className="py-2 max_md:px-2">
       <div className="my-4 max_sm:my-2">
         <div
           ref={(node) => {
@@ -48,28 +47,27 @@ const ProcessGrid = ({
             ref(node);
             // ref3(node)
           }}
-          className="grid grid-cols-3 grid-rows-2 max_720:grid-rows-1 w-full max_md:grid-cols-2"
+          className="grid items-end grid-cols-3 max_720:grid-rows-1 w-full"
         >
           {index % 2 === 0 ? (
             <>
               <div
-                id="center-icon"
-                className="items-center justify-self-center col-start-2 row-start-1 bg-white border-2 F-JC-AI-CENTER w-[100px] h-[100px] max_md:col-start-1 max_md:w-[58px] max_md:h-[58px]"
+                className="center-icon justify-self-center col-start-2 row-start-1 bg-white border-2 F-JC-AI-CENTER w-[100px] h-[100px] max_md:w-[80px] max_md:h-[80px]"
                 style={iconStyle}
               >
                 <img
-                  className="max_md:w-1/2"
+                  className="max_md:w-[40%]"
                   src={iconView ? active : inactive}
                   alt={altText}
                 />
               </div>
               <div
                 id="process-heading"
-                className="-mr-16 col-start-1 row-start-1 justify-self-end max_md:col-start-2 max_md:justify-self-start max_md:-ml-10"
+                className="-mr-16 col-start-1 row-start-1 justify-self-end"
               >
                 <div
                   id={heading}
-                  className="ProcessHeading text-right max_md:text-left"
+                  className="ProcessHeading text-right"
                   style={style}
                 >
                   {heading}
@@ -77,11 +75,11 @@ const ProcessGrid = ({
               </div>
               <div
                 id="process-subheading"
-                className="-mr-16 justify-self-end col-start-1 row-start-2 max_md:col-start-2 max_md:justify-self-start max_md:-ml-10"
+                className="-mr-16 justify-self-end col-start-1 row-start-2"
               >
                 <div
                   id={subheading}
-                  className="ProcessSubHeading text-right max_md:text-left max_md:w-[70%]"
+                  className="ProcessSubHeading text-right "
                   style={style}
                 >
                   {subheading}
@@ -91,19 +89,18 @@ const ProcessGrid = ({
           ) : (
             <>
               <div
-                id="center-icon"
-                className="items-center justify-self-center col-start-2 row-start-1 bg-white border-2 F-JC-AI-CENTER w-[100px] h-[100px] max_md:w-[58px] max_md:h-[58px] max_md:col-start-1"
+                className="center-icon items-center justify-self-center col-start-2 row-start-1 bg-white border-2 F-JC-AI-CENTER w-[6.25rem] h-[6.25rem] max_md:w-[80px] max_md:h-[80px]"
                 style={iconStyle}
               >
                 <img
-                  className="max_md:w-1/2"
+                  className="max_md:w-[40%]"
                   src={iconView ? active : inactive}
                   alt={altText}
                 />
               </div>
               <div
                 id="process-heading"
-                className=" -ml-16 col-start-3 row-start-1 justify-self-start max_md:col-start-2 max_md:-ml-10"
+                className=" -ml-16 col-start-3 row-start-1 justify-self-start "
               >
                 <div id={heading} className="ProcessHeading" style={style}>
                   {heading}
@@ -111,11 +108,11 @@ const ProcessGrid = ({
               </div>
               <div
                 id="process-subheading"
-                className="-ml-16 justify-self-start col-start-3 row-start-2 max_md:col-start-2 max_md:-ml-10"
+                className="-ml-16 justify-self-start col-start-3 row-start-2 "
               >
                 <div
                   id={subheading}
-                  className="ProcessSubHeading text-left max_md:w-[70%]"
+                  className="ProcessSubHeading text-left"
                   style={style}
                 >
                   {subheading}
@@ -131,16 +128,3 @@ const ProcessGrid = ({
 
 export default ProcessGrid;
 
-{
-  /* <div id="center-icon" className="items-center justify-self-center col-start-2 row-start-1 bg-white border-2 border-classic-dark-bluish F-JC-AI-CENTER w-[100px] h-[100px]">
-              <img src={image} alt={altText} />
-            </div>
-            <div id="process-heading" className={`col-start-${index % 2 === 0 ? "3" : "1"} row-start-1`}>
-              <div className="HeadingText">{heading}</div>
-            </div>
-            <div id="process-subheading" className={`col-start-${index % 2 === 0 ? "3" : "1"} row-start-2`}>
-              <div className="SubHeadingText">
-                {subheading}
-              </div>
-            </div> */
-}

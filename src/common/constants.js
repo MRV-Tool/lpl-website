@@ -115,3 +115,6 @@ export const ProcessList = [
     }
   }
 ]
+
+export const mailId="parth.igeek@gmail.com";
+export const subject="Contact for more information"

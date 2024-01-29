@@ -8,18 +8,25 @@ export default withMT({
     fontSize: {
       //MainHeading
       MainHeading: ["25px"],
+      MediumMainHeading:["30px"],
+      LargeMainHeading:["40px"],
       LaptopMainHeading: ["55px"],
 
       //Heading
       Heading: ["20px"],
+      MediumHeading:["28px"],
+      LargeHeading:["32px"],
       LaptopHeading: ["40px"],
 
       // SubHeading
       SubHeading: ["12px"],
+      MediumSubHeading:["16px"],
+      LargeSubHeading:["18px"],
       LaptopSubHeading: ["20px"],
 
       // Card Tilte Heading
       CardHeading: ["15px"],
+      MediumCardHeading:["20px"],
       LaptopCardHeading: ["30px"],
 
       //Card Content
@@ -58,6 +65,7 @@ export default withMT({
         white: "#FFFFFF",
         blackish: "#0C0032",
         purplish: "#190061",
+        red:"#FF0000",
         "dark-purplish": "#0C0031",
         "dark-bluish": "#240090",
         "classic-dark-bluish": "#3500D4",
