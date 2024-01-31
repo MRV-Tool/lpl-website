@@ -4,18 +4,21 @@ export const CardList = [
     image: "/images/Product_Development.png",
     title: "Product Development",
     text: "Transform your vision into reality with our end-to-end product development services. Our expert team collaborates closely with you to design, engineer, and launch innovative products.",
+    alt:'product-development-image'
   },
   {
     id: 2,
     image: "/images/UI_UX_Design.png",
     title: "UI/UX Design",
     text: "Elevate your digital experience with our innovative and user-centered UI/UX design services. Our expert team combines creativity and functionality to deliver captivating and seamless user experiences.",
+    alt:'ui-ux-design-image'
   },
   {
     id: 3,
     image: "/images/Web_Mobile_Dev.png",
     title: "Web and Mobile Development",
     text: "Empower your online presence with our state-of-the-art web and mobile development services. We build robust, responsive, and scalable applications tailored to your business needs.",
+    alt:'web-mobile-development-image'
   },
 ];
 
@@ -26,6 +29,7 @@ export const CarouselContent = [
     name: "Camila Walker",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     starCount: 5,
+    alt:"camila-walker-image"
   },
   {
     id: 2,
@@ -33,6 +37,7 @@ export const CarouselContent = [
     name: "Daisy Walflower",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     starCount: 4,
+    alt:"daisy-walflower-image"
   },
   {
     id: 3,
@@ -40,6 +45,7 @@ export const CarouselContent = [
     name: "John Doe",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     starCount: 2,
+    alt:"john-dow-image"
   },
   {
     id: 4,
@@ -47,13 +53,15 @@ export const CarouselContent = [
     name: "Lorem Ipsum",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     starCount: 3,
+    alt:"lorem-ipsum-image"
   },
   {
     id: 5,
     image: "/images/review-image-1.png",
     name: "Dolly welfare",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     starCount: 4,
+    alt:"dolly-welfare-image"
   },
 ];
 
@@ -62,24 +70,51 @@ export const ProcessList = [
     id:1,
     title:"Research",
     text:"The process begins with understanding and defining the needs and objectives of the software resulting in a requirements specification document.",
-    image:"/images/Search.svg",
+    active:"/images/Search.svg",
+    inactive:'/images/SearchOff.svg',
+    alt:'research-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:2,
     title:"Design",
     text:"Based on the research and analysis we create designs and prototype for the product and it is tested and refined until it meets the expectations.",
-    image:"/images/Design.svg",
+    active:"/images/Design.svg",
+    inactive:"/images/DesignOff.svg",
+    alt:'design-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:3,
     title:"Development",
     text:"During this phase, the software architecture is built where ideas and designs transform into a working software product.",
-    image:"/images/Development.svg",
+    active:"/images/Development.svg",
+    inactive:"/images/DevelopmentOff.svg",
+    alt:'development-icon',
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   },
   {
     id:4,
     title:"Deployment",
     text:"After successful testing, the software is deployed in the target environment, making it available to end-users.",
-    image:"/images/Deployment.svg",
+    active:"/images/Deployment.svg",
+    inactive:"/images/DeploymentOff.svg",
+    alt:"deployment-icon",
+    view:false,
+    style:{
+      border:"#BAACE4 2px solid"
+    }
   }
 ]
+
+export const mailId="parth.igeek@gmail.com";
+export const subject="Contact for more information"

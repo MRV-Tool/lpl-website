@@ -8,18 +8,25 @@ export default withMT({
     fontSize: {
       //MainHeading
       MainHeading: ["25px"],
+      MediumMainHeading:["30px"],
+      LargeMainHeading:["40px"],
       LaptopMainHeading: ["55px"],
 
       //Heading
       Heading: ["20px"],
+      MediumHeading:["28px"],
+      LargeHeading:["32px"],
       LaptopHeading: ["40px"],
 
       // SubHeading
       SubHeading: ["12px"],
+      MediumSubHeading:["16px"],
+      LargeSubHeading:["18px"],
       LaptopSubHeading: ["20px"],
 
       // Card Tilte Heading
       CardHeading: ["15px"],
+      MediumCardHeading:["20px"],
       LaptopCardHeading: ["30px"],
 
       //Card Content
@@ -56,17 +63,18 @@ export default withMT({
       colors: {
         black: "#000000",
         white: "#FFFFFF",
-        "dark-purplish": "#0C0031",
+        blackish: "#0C0032",
         purplish: "#190061",
+        red:"#FF0000",
+        "dark-purplish": "#0C0031",
         "dark-bluish": "#240090",
-        "classic-dark-bluish": "#3500D3",
+        "classic-dark-bluish": "#3500D4",
         "website-black": "#282828",
         "horizontal-seprator": "#E9E1FF",
         "golden-yellow": "#FFC100",
         "arrow-blue": "#1A0061",
         "button-blue": "#230090",
-        "background-lavendar": "#BAACE4",
-        blackish: "#0C0032",
+        "lavendar": "#BAACE4",
       },
     },
   },

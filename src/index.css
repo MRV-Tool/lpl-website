@@ -7,98 +7,199 @@
   src: url("./utils/Fonts/Satoshi-Variable.ttf") format("truetype");
   /* /Users/dreamworld/Desktop/lpl-website/src/utils/Fonts/Satoshi-Variable.ttf */
 }
-body{
+body {
   background-color: white;
+  overflow-x: hidden!important;
+  margin: auto;
 }
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   font-family: "Satoshi" !important;
 }
-.font-mont{
-  font-family: "Monteserrat" ,sans-serif !important;
+.font-mont {
+  font-family: "Monteserrat", sans-serif !important;
 }
-.underline{
-  background-color: #3500D3;
-  height:0.25rem;
-  width:3rem;
-  }
-.card{
-  width:70%;
+.underline {
+  background-color: #3500d3;
+  height: 0.25rem;
+  width: 3rem;
+}
+.card {
+  width: 70%;
   display: grid;
   padding: 20px;
-  place-items:center;
+  place-items: center;
 }
-.CarouselCards{
+.CarouselCards {
   width: 100% !important;
 }
-.image-mask{
+.image-mask {
   border-radius: 50% 50% 3.5rem 0px;
+}
+
+@keyframes colorSwap {
+  from {
+    color: #baace4;
+  }
+  to {
+    color: #3500d4;
+  }
+}
+
+@keyframes reverseColorSwap {
+  from {
+    color: #3500d4;
+  }
+  to {
+    color: #baace4;
+  }
+}
+
+@keyframes borderChange {
+  from {
+    border: #baace4 2px solid;
+  }
+  to {
+    border: #3500d4 2px solid;
+  }
+}
+
+@keyframes reverseBorderChange {
+  from {
+    border: #3500d4 2px solid;
+  }
+  to {
+    border: #baace4 2px solid;
+  }
 }
 
 @keyframes fadeInOut {
   from {
     opacity: 0;
-    transform: translateY(-5px);
   }
 
   to {
-    transform: translateY(0px);
     opacity: 1;
   }
 }
-.box-shadow{
+.box-shadow {
   border-radius: 50%;
-  box-shadow: 0px 0px 45px 10px rgba(233,225,255,1)
+  box-shadow: 0px 0px 45px 10px rgba(233, 225, 255, 1);
 }
-.shadow-left{
+.shadow-left {
   border-radius: 50% 0 0 50%;
-  box-shadow: -30px 0px 45px -20px rgba(233,225,255,1);
+  box-shadow: -30px 0px 45px -20px rgba(233, 225, 255, 1);
 }
-.shadow-right{
+.shadow-right {
   border-radius: 0 50% 50% 0;
-  box-shadow: 30px 0px 45px -20px rgba(233,225,255,1);
+  box-shadow: 30px 0px 45px -20px rgba(233, 225, 255, 1);
 }
-.font-weight-900{
+.font-weight-900 {
   font-weight: 900;
 }
 .border-gradient {
   border-width: 1px;
-  border-image: linear-gradient(to right, #0044cc, #3500D4);
+  border-image: linear-gradient(to right, #0044cc, #3500d4);
   border-image-slice: 1;
 }
-.contact-card{
-  overflow-y: hidden
+.contact-card {
+  overflow-y: hidden;
 }
-.grad-cirlce-1{
-  z-index:-2;
+.grad-cirlce-1 {
+  z-index: -2;
   filter: blur(15px);
 }
-.line{
-  border:1px solid #E9E1FF;
+.line {
+  border: 1px solid #e9e1ff;
 }
-.left{
-  left:-300px
+.left {
+  left: -300px;
 }
-.right{
-  right:-300px
+.right {
+  right: -300px;
 }
-.upper{
-  top:0;
-  width:921px;
+.upper {
+  top: 20px;
+  width: 921px;
 }
-.lower{
-  bottom:0;
-  width:474px;
+.lower {
+  bottom: 20px;
+  width: 474px;
 }
-@media (max-width: 980px) {
-  .shadow-left,.shadow-right {
+.inverted {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid #3500d4;
+}
+.ellipse {
+  background: #230090;
+  filter: blur(300px);
+  z-index: -3;
+}
+.ellipse-2 {
+  background: #230090;
+  filter: blur(230px);
+  z-index: -3;
+}
+
+#process {
+  transition-timing-function: ease-in-out;
+}
+
+.swiper {
+  width: 100%;
+  height: 200px;
+  background: transparent;
+}
+
+.swiper-pagination-bullet {
+  background-color: #d8d0f0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3500d4; /* Change to your desired color for the active bullet */
+}
+
+@media (max-width:1200px) {
+  .shadow-left,
+  .shadow-right {
     border-radius: 50% 50% 0 0;
-    box-shadow: 0px -30px 55px -10px rgba(233,225,255,1);
-    margin-bottom:20px;
+    box-shadow: 0px -30px 55px -10px rgba(233, 225, 255, 1);
+    margin-bottom: 20px;
   }
-  .box-shadow{
+  .box-shadow {
     box-shadow: none;
+  }
+}
+
+@media (max-width: 980px) {
+  
+  .inverted {
+    margin-left: 4px;
+  }
+}
+@media (max-width: 720px) {
+  .inverted {
+    margin-left: 2px;
+  }
+}
+@media (max-width: 500px) {
+  .inverted {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #3500d4;
+    
+  }
+  .vertical-line {
+    height: 100% !important;
+  }
+  .ellipse,
+  .ellipse-2 {
+    filter: blur(200px);
   }
 }
 @layer components {
@@ -110,29 +211,34 @@ body{
     @apply text-[16px] text-arrow-blue;
   }
   .MainHeadingText {
-    @apply text-LaptopMainHeading font-bold text-blackish max_md:text-MainHeading max_md:font-extrabold;
-  }
-  
-  .HeadingText {
-    @apply text-LaptopHeading font-weight-900 text-classic-dark-bluish max_md:text-Heading;
+    @apply text-LaptopMainHeading font-bold text-blackish max_xl:text-LargeMainHeading max_md:text-MediumMainHeading max_sm:text-MainHeading max_sm:font-extrabold;
   }
 
+  .HeadingText {
+    @apply text-LaptopHeading font-weight-900 text-classic-dark-bluish max_xl:text-LargeHeading max_md:text-MediumHeading max_sm:text-Heading;
+  }
+  .ProcessHeading {
+    @apply text-LaptopHeading font-weight-900  max_sm:text-Heading max_xl:text-LargeHeading max_md:text-MediumHeading text-lavendar;
+  }
   .SubHeadingText {
-    @apply text-LaptopSubHeading font-medium text-arrow-blue max_md:text-SubHeading; 
+    @apply text-LaptopSubHeading font-medium text-arrow-blue max_xl:text-LargeSubHeading max_md:text-MediumSubHeading max_sm:text-SubHeading;
+  }
+  .ProcessSubHeading {
+    @apply text-LaptopSubHeading font-medium text-lavendar max_xl:text-LargeSubHeading max_md:text-MediumSubHeading max_sm:text-SubHeading;
   }
 
   .GradientButton {
-    @apply bg-gradient-to-b from-button-blue to-[#3500D4] font-semibold text-MediumSize text-white max_md:text-SmallSize;
+    @apply bg-gradient-to-b from-button-blue to-[#3500D4] font-semibold text-MediumSize text-white max_sm:text-SmallSize;
   }
   .CardTitle {
-    @apply text-classic-dark-bluish font-weight-900 text-LaptopCardHeading max_md:text-CardHeading
+    @apply text-classic-dark-bluish font-weight-900 text-LaptopCardHeading max_md:text-MediumCardHeading max_sm:text-CardHeading;
   }
-  .ContactCard{
+  .ContactCard {
     @apply text-LargeSize border-[1px] font-medium border-[#E7DFFE] rounded-LaptopCardRadius p-10 bg-white max_md:rounded-CardRadius max_md:text-SmallSize;
-    box-shadow: 0px 0px 10px 0px #E7DFFE;
+    box-shadow: 0px 0px 10px 0px #e7dffe;
   }
-  .FooterText{
-    @apply font-medium text-RegularSize text-[#BAACE4] max_md:text-FooterSize;
+  .FooterText {
+    @apply font-medium text-RegularSize text-[#BAACE4] max_sm:text-FooterSize;
   }
   /* left to edit */
 }

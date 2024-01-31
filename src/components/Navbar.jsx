@@ -14,16 +14,16 @@ const Navbar = () => {
   }, [toggleMenu]);
   return (
     <>
-      <section className="w-full absolute top-0 text-arrow-blue flex items-center justify-between px-10 py-5 max_md:justify-center">
+      <section className="w-full absolute top-0 text-arrow-blue flex items-center justify-between px-10 py-5 max_sm:justify-center">
         <img
           src={Hamburger}
-          className="lg:hidden absolute left-5 max_md:block"
+          className="hidden absolute left-5 max_sm:block"
           onClick={() => setToggleMenu(!toggleMenu)}
         />
         <div className="brand-logo">
-          <img src={Logo} className="max_md:fl" alt="LPL" />
+          <img src={Logo} className="max_sm:fl" alt="LPL" />
         </div>
-        <div className="max_md:hidden flex justify-end items-center gap-2">
+        <div className="max_sm:hidden flex justify-end items-center gap-2">
           <ul className="flex justify-center items-center gap-10">
             <li>
               <a
