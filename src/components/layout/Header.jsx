@@ -1,9 +1,9 @@
-import React from "react";
-import Navbar from "../Navbar";
-import BackgroundSVG from "../../assets/images/Background.svg";
-import ArrowTopLeft from "../../assets/images/ArrowTopLeft.svg";
-import Rectangle1 from "../../assets/images/Rectangle1.svg";
-import Rectangle2 from "../../assets/images/Rectangle2.svg";
+import React from 'react';
+import Navbar from '../Navbar';
+import BackgroundSVG from '../../assets/images/Background.svg';
+import ArrowTopLeft from '../../assets/images/ArrowTopLeft.svg';
+import Rectangle1 from '../../assets/images/Rectangle1.svg';
+import Rectangle2 from '../../assets/images/Rectangle2.svg';
 
 const Header = () => {
   return (
@@ -29,8 +29,10 @@ const Header = () => {
           We specialize in building scalable custom software solutions to
           optimize your processes and streamline workflows
         </div>
-        <div className="F-JC-AI-CENTER gap-[10px] GradientButton mt-10 px-6 py-3">
-          <p className="font-mont">Contact us</p>
+        <div className="F-JC-AI-CENTER gap-[10px] GradientButton mt-10 px-6 py-3 cursor-pointer">
+          <a href="#contact-us" className="font-mont">
+            Contact us
+          </a>
           <img src={ArrowTopLeft} />
         </div>
       </div>
@@ -39,4 +41,4 @@ const Header = () => {
 };
 
 export default Header;
-``
+``;
