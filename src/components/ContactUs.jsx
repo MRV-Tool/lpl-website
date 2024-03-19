@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import BackgroundSVG from "../assets/images/FooterBG.svg";
-import PhoneInput from "react-phone-number-input";
-import { mailId, subject } from "../common/constants";
-import "react-phone-number-input/style.css";
+import React, { useState } from 'react';
+import BackgroundSVG from '../assets/images/FooterBG.svg';
+import PhoneInput from 'react-phone-number-input';
+import { mailId, subject } from '../common/constants';
+import 'react-phone-number-input/style.css';
 
 const ContactUs = React.forwardRef((props, ref) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errObj, setErrObj] = useState({
@@ -30,9 +30,9 @@ const ContactUs = React.forwardRef((props, ref) => {
       email: false,
       checked: false,
     };
-    if (name.trim() == "") prev.name = true;
-    if (typeof phone == "undefined" || phone.trim() == "") prev.phone = true;
-    if (email.trim() == "" && !validateEmail(email)) prev.email = true;
+    if (name.trim() == '') prev.name = true;
+    if (typeof phone == 'undefined' || phone.trim() == '') prev.phone = true;
+    if (email.trim() == '' && !validateEmail(email)) prev.email = true;
     if (!isChecked) prev.checked = true;
 
     return prev;
@@ -54,8 +54,8 @@ const ContactUs = React.forwardRef((props, ref) => {
     setErrObj(data);
 
     if (!Object.values(data).includes(true)) {
-      const body = `Full Name: ${name}\nEmail Address: ${email}\nPhone number: ${phone}\n\nMessage: ${message}`
-      const ele = document.createElement("a");
+      const body = `Full Name: ${name}\nEmail Address: ${email}\nPhone number: ${phone}\n\nMessage: ${message}`;
+      const ele = document.createElement('a');
       ele.href = `mailto:${mailId}?subject=${encodeURIComponent(
         subject
       )}!&body=${encodeURIComponent(body)}`;
@@ -71,7 +71,7 @@ const ContactUs = React.forwardRef((props, ref) => {
     <div ref={ref} id="contact-us" className="my-24 relative overflow-clip">
       <img className="z-[-1] absolute w-full" src={BackgroundSVG} />
       <div className="w-full F-JC-AI-CENTER flex-col">
-        <div className="HeadingText uppercase">ContactUs</div>
+        <div className="HeadingText uppercase">Contact Us</div>
         <div className="underline max_md:w-[1.5rem]"></div>
       </div>
       <div className="contact-card mt-9 F-JC-AI-CENTER">
@@ -89,8 +89,8 @@ const ContactUs = React.forwardRef((props, ref) => {
               id="fname"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className={`w-full text-classic-dark-bluish py-4 F-JC-AI-CENTER border-b focus:border-arrow-blue ${
-                errObj.name ? "border-red" : "border-arrow-blue"
+              className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b focus:border-arrow-blue ${
+                errObj.name ? 'border-red' : 'border-arrow-blue'
               }`}
               placeholder="Full Name"
               required={true}
@@ -107,8 +107,8 @@ const ContactUs = React.forwardRef((props, ref) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`w-full text-classic-dark-bluish py-4 F-JC-AI-CENTER border-b ${
-                  errObj.email ? "border-red" : "border-arrow-blue"
+                className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b ${
+                  errObj.email ? 'border-red' : 'border-arrow-blue'
                 } focus:border-arrow-blue`}
                 placeholder="Email Address"
                 required={true}
@@ -123,8 +123,8 @@ const ContactUs = React.forwardRef((props, ref) => {
                 id="phone"
                 value={phone}
                 onChange={(value) => setPhone(value)}
-                className={`w-full text-classic-dark-bluish py-4 F-JC-AI-CENTER border-b ${
-                  errObj.phone ? "border-red" : "border-arrow-blue"
+                className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b ${
+                  errObj.phone ? 'border-red' : 'border-arrow-blue'
                 } focus:border-arrow-blue`}
                 placeholder="Phone Number"
                 defaultCountry="US"
@@ -137,7 +137,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               Message
             </label>
             <textarea
-              className="w-full text-classic-dark-bluish py-4 border-b border-arrow-blue focus:border-arrow-blue"
+              className="w-full text-classic-dark-bluish py-4 px-3 border-b border-arrow-blue focus:border-arrow-blue"
               placeholder="Type Message..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -165,7 +165,7 @@ const ContactUs = React.forwardRef((props, ref) => {
                   name="check"
                   id="check"
                   className={`w-5 h-5 rounded-none border-1 border-solid ${
-                    errObj.checked ? "border-red" : "border-arrow-blue"
+                    errObj.checked ? 'border-red' : 'border-arrow-blue'
                   }`}
                   checked={isChecked}
                   onChange={handleCheck}

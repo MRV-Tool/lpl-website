@@ -3,22 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Satoshi";
-  src: url("./utils/Fonts/Satoshi-Variable.ttf") format("truetype");
+  font-family: 'Satoshi';
+  src: url('./utils/Fonts/Satoshi-Variable.ttf') format('truetype');
   /* /Users/dreamworld/Desktop/lpl-website/src/utils/Fonts/Satoshi-Variable.ttf */
 }
 body {
   background-color: white;
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
   margin: auto;
+
+  scroll-behavior: smooth;
 }
 * {
   margin: 0;
   padding: 0;
-  font-family: "Satoshi" !important;
+  font-family: 'Satoshi' !important;
 }
 .font-mont {
-  font-family: "Monteserrat", sans-serif !important;
+  font-family: 'Monteserrat', sans-serif !important;
 }
 .underline {
   background-color: #3500d3;
@@ -164,7 +166,7 @@ body {
   background-color: #3500d4; /* Change to your desired color for the active bullet */
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   .shadow-left,
   .shadow-right {
     border-radius: 50% 50% 0 0;
@@ -177,7 +179,6 @@ body {
 }
 
 @media (max-width: 980px) {
-  
   .inverted {
     margin-left: 4px;
   }
@@ -192,7 +193,6 @@ body {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 8px solid #3500d4;
-    
   }
   .vertical-line {
     height: 100% !important;
