@@ -15,7 +15,7 @@ export const CardList = [
   },
   {
     id: 3,
-    image: '/assest/images/Web_Mobile_Dev.png',
+    image: '/images/Web_Mobile_Dev.png',
     title: 'Web and Mobile Development',
     text: 'Empower your online presence with our state-of-the-art web and mobile development services. We build robust, responsive, and scalable applications tailored to your business needs.',
     alt: 'web-mobile-development-image',

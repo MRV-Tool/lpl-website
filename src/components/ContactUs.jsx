@@ -3,6 +3,8 @@ import BackgroundSVG from '../assets/images/FooterBG.svg';
 import PhoneInput from 'react-phone-number-input';
 import { mailId, subject } from '../common/constants';
 import 'react-phone-number-input/style.css';
+import { BASE_URL } from '../api/config';
+import axios from 'axios';
 
 const ContactUs = React.forwardRef((props, ref) => {
   const [name, setName] = useState('');
@@ -11,6 +13,7 @@ const ContactUs = React.forwardRef((props, ref) => {
   const [message, setMessage] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [errObj, setErrObj] = useState({
     name: false,
     phone: false,
@@ -54,16 +57,39 @@ const ContactUs = React.forwardRef((props, ref) => {
     setErrObj(data);
 
     if (!Object.values(data).includes(true)) {
-      const body = `Full Name: ${name}\nEmail Address: ${email}\nPhone number: ${phone}\n\nMessage: ${message}`;
-      const ele = document.createElement('a');
-      ele.href = `mailto:${mailId}?subject=${encodeURIComponent(
-        subject
-      )}!&body=${encodeURIComponent(body)}`;
-      document.body.appendChild(ele);
-      setTimeout(() => {
-        ele.click();
-        document.body.removeChild(ele);
-      }, 100);
+      const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      };
+      /// Integrate API
+      // const body = `Full Name: ${name}\nEmail Address: ${email}\nPhone number: ${phone}\n\nMessage: ${message}`;
+      // const ele = document.createElement('a');
+      // ele.href = `mailto:${mailId}?subject=${encodeURIComponent(
+      //   subject
+      // )}!&body=${encodeURIComponent(body)}`;
+      // document.body.appendChild(ele);
+      // setTimeout(() => {
+      //   ele.click();
+      //   document.body.removeChild(ele);
+      // }, 100);
+      setIsLoading(true);
+      axios
+        .post(`${BASE_URL}/contact-us`, data)
+        .then((response) => {
+          console.log(':::---------', response);
+          setIsLoading(false);
+          setEmail('');
+          setMessage('');
+          setName('');
+          setPhone('');
+          setIsChecked(false);
+        })
+        .catch((errorRes) => {
+          console.log('::::', errorRes);
+          setIsLoading(false);
+        });
     }
   };
 
@@ -88,7 +114,10 @@ const ContactUs = React.forwardRef((props, ref) => {
               name="fname"
               id="fname"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value);
+                setErrObj((prev) => ({ ...prev, name: false }));
+              }}
               className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b focus:border-arrow-blue ${
                 errObj.name ? 'border-red' : 'border-arrow-blue'
               }`}
@@ -106,7 +135,10 @@ const ContactUs = React.forwardRef((props, ref) => {
                 name="email"
                 id="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setErrObj((prev) => ({ ...prev, email: false }));
+                }}
                 className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b ${
                   errObj.email ? 'border-red' : 'border-arrow-blue'
                 } focus:border-arrow-blue`}
@@ -122,7 +154,10 @@ const ContactUs = React.forwardRef((props, ref) => {
                 name="phone"
                 id="phone"
                 value={phone}
-                onChange={(value) => setPhone(value)}
+                onChange={(value) => {
+                  setPhone(value);
+                  setErrObj((prev) => ({ ...prev, phone: false }));
+                }}
                 className={`w-full text-classic-dark-bluish py-4 px-3 F-JC-AI-CENTER border-b ${
                   errObj.phone ? 'border-red' : 'border-arrow-blue'
                 } focus:border-arrow-blue`}
@@ -140,7 +175,9 @@ const ContactUs = React.forwardRef((props, ref) => {
               className="w-full text-classic-dark-bluish py-4 px-3 border-b border-arrow-blue focus:border-arrow-blue"
               placeholder="Type Message..."
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               rows={3}
             />
           </div>
@@ -149,6 +186,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               type="submit"
               className="py-3 F-JC-AI-CENTER w-full GradientButton cursor-pointer"
               onClick={handleSubmit}
+              disabled={isLoading}
             >
               Submit
             </button>
