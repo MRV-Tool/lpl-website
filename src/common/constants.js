@@ -32,38 +32,6 @@ export const CarouselContent = [
     starCount: 5,
     alt: 'camila-walker-image',
   },
-  {
-    id: 2,
-    image: '/images/review-image-1.png',
-    name: 'Daisy Walflower',
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    starCount: 4,
-    alt: 'daisy-walflower-image',
-  },
-  {
-    id: 3,
-    image: '/images/review-image-1.png',
-    name: 'John Doe',
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    starCount: 2,
-    alt: 'john-dow-image',
-  },
-  {
-    id: 4,
-    image: '/images/review-image-1.png',
-    name: 'Lorem Ipsum',
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    starCount: 3,
-    alt: 'lorem-ipsum-image',
-  },
-  {
-    id: 5,
-    image: '/images/review-image-1.png',
-    name: 'Dolly welfare',
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    starCount: 4,
-    alt: 'dolly-welfare-image',
-  },
 ];
 
 export const ProcessList = [
